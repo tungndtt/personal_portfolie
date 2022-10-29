@@ -5,6 +5,45 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.list {
+				display: flex;
+				flex-direction: column;
+			}
+			.list .list-item {
+				display: flex;
+				flex-direction: column;
+				text-decoration: none;
+				margin-bottom: 25px;
+				padding: 15px;
+				background: #dbd7d7;
+				border: 1px solid transparent;
+				border-radius: 10px;
+				box-shadow: #abaaaa 4px 5px;
+				transition: transform .5s;
+				color: #ffffff;
+			}
+			.list .list-item .item-title {
+				display: flex;
+				font-size: 20px;
+				font-weight: 600;
+			}
+			.list .list-item .item-title span {
+				margin-left: auto;
+			}
+			.list .list-item .description {
+				display: none;
+				margin-top: 6px;
+				border-top: 3px solid #f3ecec;
+				font-size: 18px;
+				font-weight: 400;
+			}
+			.list .list-item:hover {
+				background-color: #d5cbcb;
+				cursor: pointer;
+				transform: scale(1.03);
+			}
+		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
