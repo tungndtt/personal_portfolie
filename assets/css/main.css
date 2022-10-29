@@ -40,6 +40,7 @@ section p {
 }
 .list .list-item {
 	display: flex;
+	flex-direction: column;
 	text-decoration: none;
 	margin-bottom: 25px;
 	padding: 15px;
@@ -49,11 +50,21 @@ section p {
 	box-shadow: #abaaaa 4px 5px;
 	transition: transform .5s;
 	color: #ffffff;
-    font-size: 20px;
+}
+.list .list-item .item-title {
+	display: flex;
+	font-size: 20px;
     font-weight: 600;
 }
-.list .list-item span {
+.list .list-item .item-title span {
 	margin-left: auto;
+}
+.list .list-item .description {
+	display: none;
+	margin-top: 6px;
+	border-top: 3px solid #f3ecec;
+	font-size: 18px;
+	font-weight: 400;
 }
 .list .list-item:hover {
 	background-color: #d5cbcb;

@@ -221,6 +221,22 @@
 				} 
 			});
 		}
+
+		var delay = function (elem) {
+			var timeout = null;
+			elem.onmouseenter = function() {
+				timeout = setTimeout(() => $(this).find(".description").slideDown(300), 500);
+			};
+		
+			elem.onmouseleave = function() {
+				$(this).find(".description").slideUp(500);
+				clearTimeout(timeout);
+			}
+		};
+		var listItems = document.getElementsByClassName("list-item");
+		for (var i=0; i<listItems.length; i++) {
+			delay(listItems[i]);
+		};
 })(jQuery);
 
 function copyToClipboard(element) {
