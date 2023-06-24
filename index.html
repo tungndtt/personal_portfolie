@@ -6,6 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
+			.download-cv-button {
+				width: 100%;
+				height: 50px;
+				border-radius: 4px;
+				margin-top: 20px;
+			}
+
 			.list {
 				display: flex;
 				flex-direction: column;
@@ -42,6 +49,49 @@
 				background-color: #d5cbcb;
 				cursor: pointer;
 				transform: scale(1.03);
+			}
+
+			.expandable-item {
+				border: 1px solid transparent;
+				border-radius: 10px;
+				margin-bottom: 10px;
+			}
+			.expandable-item .header {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				background: #dbd7d7;
+				border: 1px solid transparent;
+				border-radius: 10px;
+				padding: 10px 0 10px 25px;
+				cursor: pointer;
+				font-weight: 400;
+			}
+			.expandable-item .header:hover {
+				background-color: #d5cbcb;
+				cursor: pointer;
+			}
+			.expandable-item .header .title {
+				display: block;
+			}
+			.expandable-item .header .timestamp {
+				display: none;
+			}
+			.expandable-item .icon {
+				transition: transform 0.8s ease;
+				margin-right: 20px;
+			}
+			.expandable-item .expandable {
+				transition: height 0.8s;
+				height: 0;
+				overflow: hidden;
+			}
+			.expandable-item .details {
+				margin-left: 10px;
+				padding: 10px 10px 0 10px;
+				list-style-type: none;
+				border-left: 1px dotted #d5cbcb;
 			}
 		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -80,13 +130,14 @@
 						<h2>whoami?</h2>
 					</header>
 					<p>
-						My fullname is <b>Doan Thanh Tung Nguyen</b>, Tung Nguyen if called shortly, but you can simply call me Tung as well 😉
+						Hey there! I'm <b>Doan Thanh Tung Nguyen</b>, but you can call me Tung 😉
 						<br>
-						I started the Master program majoring in Computer Science at the Technical University Munich 🏫 in April 2022.
-						Before, I spent 3 years for doing the Bachelor degree (also major Computer Science) at the Technical University Darmstadt 🏫
+						I'm currently pursuing a Master's degree in Computer Science at the esteemed Technical University Munich 🏫 since April 2022.
+						Prior to that, I completed my Bachelor's degree, also in Computer Science, at the renowned Technical University Darmstadt 🏫 over a span of three years.
 						<br><br>
-						I like solving the problems by building the software applications and can quickly adapt to any technologies, as long as they can help me reaching the goal 🚀 
+						I'm passionate about problem-solving through software development and have a knack for quickly adapting to new technologies with the aim to leverage them to accomplish my goals 🚀
 					</p>
+					<button class="download-cv-button" onclick="downloadResume()">GET MY RESUME</button>
 				</article>
 
 				<!-- Experience -->
@@ -94,36 +145,67 @@
 					<header>
 						<h2>Experience</h2>
 					</header>
-					<div>
-						<u><b>Juni 2021 – May 2022</b></u>
-						<ul>
-							<li><b>Company:</b> Software AG atune</li>
-							<li><b>Position:</b> Software Engineer Working Student</li>
-							<li>
-								<b>Contributions:</b>
-								<ul>
-									<li>Implement the platform for real-time data access in livestock control</li>
-									<li>Develop the features for automating the research activities using Selenium and through that, boost the performance of data management by 30%</li>
-									<li>Build an friendly interactive web-based tool using NodeRED and through that, the non-technical users can create the control flow manually</li>
-									<li>Optimize the algorithms for managing large files in the organization systems</li>
-								</ul>
-							</li>
-						</ul>
+					<div class="expandable-item">
+						<div class="header" onclick="toggleItemDetails(event)">
+							<div class="title">Backend Developer at Allianz</div>
+							<div class="timestamp">Since February 2023</div>
+							<span class="arrow icon solid fa-chevron-right">
+						</div>
+						<div class="expandable">
+							<ul class="details">
+								<li><b>Company:</b> Allianz</li>
+								<li><b>Position:</b> Backend Developer Working Student</li>
+								<li>
+									<b>Contributions:</b>
+									<ul>
+										<li>Created an advanced automation tool to verify the reliability of system logs and ensure the confidentiality of internal files</li>
+										<li>Implemented a middleware solution for efficiently managing the rate of logs within the system network</li>
+										<li>Developed a comprehensive platform to assess and test the training knowledge of employees</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div>
-						<u><b>Juni 2022</b></u>
-						<ul>
-							<li><b>Company:</b> Precitaste</li>
-							<li><b>Position:</b> Software Engineer Working Student</li>
-							<li>
-								<b>Contributions:</b>
-								<ul>
-									<li>Simulate the behavior of the restaurant chain Chipotle and through that, save the cost for testing the machine learning model</li>
-									<li>Implement the scripts for computing the food state KPI (e.g., refill, expiration, stockout duration, etc.) and then use the information for analyzing and optimizing the business process</li>
-									<li>Develop the automation tools for plotting the daily data and generating its summary reports</li>
-								</ul>
-							</li>
-						</ul>
+					<div class="expandable-item">
+						<div class="header" onclick="toggleItemDetails(event)">
+							<div class="title">Software Engineer at Precitaste</div>
+							<div class="timestamp">June 2022 - February 2023</div>
+							<span class="arrow icon solid fa-chevron-right">
+						</div>
+						<div class="expandable">
+							<ul class="details">
+								<li><b>Company:</b> Precitaste</li>
+								<li><b>Position:</b> Software Engineer Working Student</li>
+								<li>
+									<b>Contributions:</b>
+									<ul>
+										<li>Conducted simulations to model restaurant behavior, resulting in significant cost savings for testing the machine learning model</li>
+										<li>Created analytical scripts to compute key performance indicators (KPIs) for restaurant operations and optimized business processes based on the analysis</li>
+										<li>Designed and developed an automation tool that visually presents business data and generates comprehensive analysis reports</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="expandable-item">
+						<div class="header" onclick="toggleItemDetails(event)">
+							<div class="title">Software Engineer at Software AG</div>
+							<div class="timestamp">June 2021 - May 2022</div>
+							<span class="arrow icon solid fa-chevron-right">
+						</div>
+						<div class="expandable">
+							<ul class="details">
+								<li><b>Company:</b> Software AG</li>
+								<li><b>Position:</b> Software Engineer Working Student</li>
+								<li>
+									<b>Contributions:</b>
+									<ul>
+										<li>Developed a comprehensive platform for real-time control of livestock and efficient management of experimental data in research activities</li>
+										<li>Designed and implemented a user-friendly, interactive web-based tool using NodeRED, empowering researchers to create customized data flows according to their specific needs</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</article>
 
@@ -139,18 +221,26 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								The project is in the co-operation with Deutschbahn. The ultimate goal of the project is to deliver an web-based application software,
-								which supports the company in controlling the railway model system and through that, boost the scheduling and planning performance.
+								<li>
+									Developed and delivered a web-based application software to support DeutscheBahn in efficiently controlling their railway model system
+								</li>
+								<li>
+									Implemented real-time communication capabilities between the client and server, enabling seamless and immediate interaction
+								</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/sensitivity_analysis">
 							<div class="item-title">
-								Sensitivity Analysis
+								Sensitivity Analysis on Process Mining Analysis Pipeline
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								The project is part of the Bachelor thesis, which focuses on analyzing the sensitivity in a process mining analysis pipeline.
-								The implementation suggests different variation strategies and metrics for measuring the sensitivity in different aspects.
+								<li>
+									Conducted sensitivity analysis within a process mining analysis pipeline to evaluate the impact of various factors on the results
+								</li>
+								<li>
+									Generated variant measurements using different strategies and metrics to provide a comprehensive understanding of the process
+								</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/social-network">
@@ -159,8 +249,12 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								The project is part of the practical course held by the Telecommunication Lab department of TU Darmstadt. The final aim is to implement a social network application running on the Android-based system.
-								The final product is a combination of Tiktok and Tinder, in which users can upload, like and comment on the posts; the recommendation system computes the preference based on users activities, etc.
+								<li>
+									Developed a social networking application for the Android-based system, combining features inspired by TikTok and Tinder
+								</li>
+								<li>
+									Implemented functionalities for uploading and interacting with the posts, as well as recommendations of people based on user activities
+								</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/evoila/devoilapers-backend">
@@ -169,27 +263,40 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								The project is in the co-operation with the company Devoila, which aims to create a web-based interface that would allow operators to be controlled without having to act on the command line in the Kubernetes environment.
-								Through the project, the operators in Kubernetes can also be established by users without specialized, technical knowledge or certain level of expertise.
+								<li>
+									Deliver a web-based interface that allows non-technical users in Devoila to interact the Kubernetes environment
+								</li>
+								<li>
+									Automatically create and control operators without specialized, technical knowledge requirement
+								</li>
 							</div>
 						</a>
-						<a class="list-item" href="https://github.com/tungndtt/Pokemon">
+						<a class="list-item" href="https://github.com/trail-ml/monotrail">
 							<div class="item-title">
-								Mahjong Pokemon
+								Monotrail
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								This is a fun project, in which I re-implement the Mahjong minigame using the Pokemon assets. 
+								<li>
+									Developed and delivered a web-based platform aimed at assisting business and rule-makers in comprehending the ML/AI process
+								</li>
+								<li>
+									Leveraged ChatGPT to make complex data more understandable and automated the response process for improved efficiency
+								</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/campus_manager">
 							<div class="item-title">
-								Campus Manager Application
+								Campus Manager
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								The project is an Java application for managing the university campus.
-								The application consists of all basic CRUD operations (create, read, update, delete) and extended features such as joining data, loading/importing existing data, etc.
+								<li>
+									Java application for efficient university campus management streamlines handling of campus-related data and enables seamless management of existing records
+								</li>
+								<li>
+									Covered basic CRUD operations (create, read, update, delete) and advanced features include data joining, loading, and importing
+								</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/beautiful_binary_tree_drawing">
@@ -198,8 +305,21 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								The project aims to help students, who struggle with the binary search data structure, by giving them a decent visualization of the binary tree.
-								The implementation offers different perspective views for a given binary tree.
+								<li>
+									Java program for visualizing binary trees from different perspective views
+								</li>
+								<li>
+									Generates visual representations of binary trees for enhanced understanding
+								</li>
+							</div>
+						</a>
+						<a class="list-item" href="https://github.com/tungndtt/Pokemon">
+							<div class="item-title">
+								Mahjong
+								<span class="arrow icon solid fa-chevron-right"></span>
+							</div>
+							<div class="description">
+								Combined Mahjong gameplay with the beloved Pokemon assets
 							</div>
 						</a>
 					</div>
@@ -298,7 +418,7 @@
 							Github
 						</button>
 						<div class="collapsed-content">
-							<p>My Github account is <b>tungndtt</b>. You can find the me <a href="https://github.com/tungndtt">here</a></p>
+							<p>Check out my <a href="https://github.com/tungndtt">Github</a> account, where coding magic happens</p>
 						</div>
 
 						<button type="button" class="collapsible">
