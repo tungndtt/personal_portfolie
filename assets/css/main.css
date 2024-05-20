@@ -1919,7 +1919,7 @@ input, select, textarea {
 		margin: 0 auto;
 		min-height: 100vh;
 		max-width: 100%;
-		padding: 4em 0;
+		padding: 60px 0 0 0;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;

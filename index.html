@@ -44,6 +44,10 @@
 				border-top: 3px solid #f3ecec;
 				font-size: 18px;
 				font-weight: 400;
+				line-height: 1.5;
+			}
+			.list .list-item .description li {
+				margin-top: 20px;
 			}
 			.list .list-item:hover {
 				background-color: #d5cbcb;
@@ -93,6 +97,21 @@
 				list-style-type: none;
 				border-left: 1px dotted #d5cbcb;
 			}
+			.divider {
+				font-size: 20px;
+				color: #d5cbcb;
+				display: flex;
+				align-items: center;
+				margin-bottom: 15px;
+			}
+
+			.divider::before, .divider::after {
+				flex: 1;
+				content: '';
+				padding: 1px;
+				background-color: rgb(224, 224, 224);
+				margin: 8px;
+			}
 		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -107,7 +126,6 @@
 				<a href="#about" class="icon solid fa-address-card"><span>About</span></a>
 				<a href="#experience" class="icon solid fa-project-diagram"><span>Experience</span></a>
 				<a href="#project" class="icon solid fa-list-ul"><span>Projects</span></a>
-				<a href="#technology" class="icon solid fa-database"><span>Technologies</span></a>
 				<a href="#media" class="icon solid fa-envelope"><span>Media</span></a>
 			</nav>
 
@@ -116,8 +134,8 @@
 				<article id="home" class="panel intro">
 					<header>
 						<h1>Tung Nguyen</h1>
-						<p>M.Sc. Student at Technical University Munich
-						<p>Major Computer Science</p>
+						<p>Software Engineer
+						<p>Master Graduate @ TUM</p>
 					</header>
 					<a href="#about" class="jumplink pic">
 						<span class="arrow icon solid fa-chevron-right"><span>More about me?</span></span>
@@ -130,14 +148,12 @@
 						<h2>whoami?</h2>
 					</header>
 					<p>
-						Hey there! I'm <b>Doan Thanh Tung Nguyen</b>, but you can call me Tung 😉
-						<br>
-						I'm currently pursuing a Master's degree in Computer Science at the esteemed Technical University Munich 🏫 since April 2022.
-						Prior to that, I completed my Bachelor's degree, also in Computer Science, at the renowned Technical University Darmstadt 🏫 over a span of three years.
+						Hey there! I'm Tung Nguyen, a software engineer based in Munich, Germany who enjoys in building high-quality software applications 👨‍💻 
 						<br><br>
-						I'm passionate about problem-solving through software development and have a knack for quickly adapting to new technologies with the aim to leverage them to accomplish my goals 🚀
+						With a huge interest in cutting-edge technologies and innovative solutions, I'm drawn to the challenges making things available to everyone on the internet. Throughout multiple projects, I possess a comprehensive understanding of architecture and design standards, as well as methodical problem-solving mind which allows me to tackle diverse challenges in the development
+						landscape. Also, considered as team player, I always orient myself to the team's general goal to drive productivity in collabration environments and yield outstanding outcomes 🚀
 					</p>
-					<button class="download-cv-button" onclick="downloadResume()">GET MY RESUME</button>
+					<button class="download-cv-button" onclick="downloadResume()">CHECKOUT MY RESUME</button>
 				</article>
 
 				<!-- Experience -->
@@ -154,13 +170,12 @@
 						<div class="expandable">
 							<ul class="details">
 								<li><b>Company:</b> Allianz</li>
-								<li><b>Position:</b> Backend Developer Working Student</li>
+								<li><b>Position:</b> Backend Developer</li>
 								<li>
 									<b>Contributions:</b>
 									<ul>
-										<li>Created an advanced automation tool to verify the reliability of system logs and ensure the confidentiality of internal files</li>
-										<li>Implemented a middleware solution for efficiently managing the rate of logs within the system network</li>
-										<li>Developed a comprehensive platform to assess and test the training knowledge of employees</li>
+										<li>Implemented a <b>lexical parser using ANTLR to check security rules and parse them into a structured format</b> for efficient storage and retrieval, ensuring the reliability of customer files before importing them into the company system.</li>
+										<li>Implemented <b>tracking of incident resolution progress in an internal incident management platform</b>, using <b>Server-Sent Events for real-time updates</b> in worker collaboration and utilizing <b>Redis to broadcast modifications</b> across the distributed system.</li>
 									</ul>
 								</li>
 							</ul>
@@ -175,13 +190,12 @@
 						<div class="expandable">
 							<ul class="details">
 								<li><b>Company:</b> Precitaste</li>
-								<li><b>Position:</b> Software Engineer Working Student</li>
+								<li><b>Position:</b> Software Engineer</li>
 								<li>
 									<b>Contributions:</b>
 									<ul>
-										<li>Conducted simulations to model restaurant behavior, resulting in significant cost savings for testing the machine learning model</li>
-										<li>Created analytical scripts to compute key performance indicators (KPIs) for restaurant operations and optimized business processes based on the analysis</li>
-										<li>Designed and developed an automation tool that visually presents business data and generates comprehensive analysis reports</li>
+										<li>Developed <b>analytical scripts in Python to compute key performance indicators for Chipotle's operations</b>, utilizing <b>Seaborn for data visualization</b> to provide a comprehensive view of business processes and operational efficiency.</li>
+										<li>Implemented <b>simulation scripts that consumed event data from Kafka to model restaurant behavior</b>, enabling efficient testing of new machine learning deployments and significantly reducing testing costs and business risks.</li>
 									</ul>
 								</li>
 							</ul>
@@ -200,8 +214,8 @@
 								<li>
 									<b>Contributions:</b>
 									<ul>
-										<li>Developed a comprehensive platform for real-time control of livestock and efficient management of experimental data in research activities</li>
-										<li>Designed and implemented a user-friendly, interactive web-based tool using NodeRED, empowering researchers to create customized data flows according to their specific needs</li>
+										<li>Developed an <b>application that provides real-time insights into the organization's livestock</b> and integrates <b>Selenium for automating experimental activities</b>, enabling remote management of research operations at Boehringer Ingelheim.</li>
+										<li>Created an <b>interactive, user-friendly software tool with NodeRED</b>, allowing researchers to <b>customize data flows and increase automation control</b> according to their specific needs.</li>
 									</ul>
 								</li>
 							</ul>
@@ -215,18 +229,35 @@
 						<h2>Projects</h2>
 					</header>
 					<div class="list">
+						<div class="divider">Features</div>
+						<a class="list-item" href="https://github.com/tungndtt/livesen-map">
+							<div class="item-title">
+								Livensen Map
+								<span class="arrow icon solid fa-chevron-right"></span>
+							</div>
+							<div class="description">
+								<li>Developed a microservice web application for digital management of the farming progress, utilizing predictive models and crop growth data from multiple seasons to provide farmers precise fertilizer recommendations.</li>
+								<li>Integrated OpenStreetMap to enable intuitive visualization of agricultural fields on a dynamic map interface and utilized Redis as PubSub system to synchronize farming progress across users.</li>
+							</div>
+						</a>
+						<a class="list-item" href="https://trail-ml.com/">
+							<div class="item-title">
+								Monotrail
+								<span class="arrow icon solid fa-chevron-right"></span>
+							</div>
+							<div class="description">
+								<li>Implemented a web application aimed at assisting business in understanding the ML process and highlighting ML experiments	that maximizes the business benefit based on defined metrics.</li>
+								<li>Leveraged LLMs to automate response process and simplify complex ML process to the business and law-maker.</li>
+							</div>
+						</a>
 						<a class="list-item" href="https://github.com/tungndtt/web_control_center">
 							<div class="item-title">
 								Web Control Center
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								<li>
-									Developed and delivered a web-based application software to support DeutscheBahn in efficiently controlling their railway model system
-								</li>
-								<li>
-									Implemented real-time communication capabilities between the client and server, enabling seamless and immediate interaction
-								</li>
+								<li>Delivered a web-based platform which offers precise time scheduling and remote control capabilities to support Deutsche Bahn in effectively controlling their railway model system.</li>
+								<li>Implemented socket communication between the client and server to enable real-time updates and immediate control interactions.</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/sensitivity_analysis">
@@ -271,20 +302,7 @@
 								</li>
 							</div>
 						</a>
-						<a class="list-item" href="https://github.com/trail-ml/monotrail">
-							<div class="item-title">
-								Monotrail
-								<span class="arrow icon solid fa-chevron-right"></span>
-							</div>
-							<div class="description">
-								<li>
-									Developed and delivered a web-based platform aimed at assisting business and rule-makers in comprehending the ML/AI process
-								</li>
-								<li>
-									Leveraged ChatGPT to make complex data more understandable and automated the response process for improved efficiency
-								</li>
-							</div>
-						</a>
+						<div class="divider">Others</div>
 						<a class="list-item" href="https://github.com/tungndtt/campus_manager">
 							<div class="item-title">
 								Campus Manager
@@ -323,70 +341,6 @@
 							</div>
 						</a>
 					</div>
-				</article>
-
-				<article id="technology" class="panel">
-					<header>
-						<h2>Technologies</h2>
-					</header>
-					<section>
-						<div class="row">
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.java.com/de/" class="image fit"><img src="images/java.jpg" alt="java"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.javascript.com/" class="image fit"><img src="images/javascript.png" alt="javascript"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.python.org/" class="image fit"><img src="images/python.png" alt="python"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://reactjs.org/" class="image fit"><img src="images/react.jpg" alt="react"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://vuejs.org/" class="image fit"><img src="images/vue.png" alt="vue"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://spring.io/" class="image fit"><img src="images/spring.png" alt="spring"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://jersey.github.io/" class="image fit"><img src="images/jersey.png" alt="jersey"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://flask.palletsprojects.com/" class="image fit"><img src="images/flask.png" alt="flask"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.djangoproject.com/" class="image fit"><img src="images/django.png" alt="django"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://expressjs.com/" class="image fit"><img src="images/express.png" alt="express"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://nodejs.org/" class="image fit"><img src="images/nodejs.png" alt="nodejs"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://maven.apache.org/" class="image fit"><img src="images/maven.jpg" alt="maven"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.postgresql.org/" class="image fit"><img src="images/postgresql.png" alt="postgresql"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.mongodb.com/" class="image fit"><img src="images/mongodb.jpg" alt="mongodb"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.mysql.com/" class="image fit"><img src="images/mysql.jpg" alt="mysql"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://socket.io/" class="image fit"><img src="images/socketio.jpg" alt="socketio"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://www.elastic.co/" class="image fit"><img src="images/elasticsearch.png" alt="elasticsearch"></a>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<a href="https://kafka.apache.org/" class="image fit"><img src="images/kafka.jpeg" alt="kafka"></a>
-							</div>
-						</div>
-					</section>
 				</article>
 
 				<!-- Media -->
