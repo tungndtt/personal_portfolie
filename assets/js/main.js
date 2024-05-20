@@ -239,7 +239,13 @@ function toggleItemDetails(event) {
 function copyToClipboard(element) {
   var $temp = $("<input>");
   $("body").append($temp);
-  $temp.val($(element).text()).select();
+  $temp.val($(element + " p").text()).select();
   document.execCommand("copy");
   $temp.remove();
+  $(element + " span").removeClass("fa-copy");
+  $(element + " span").addClass("fa-check");
+  setTimeout(() => {
+    $(element + " span").removeClass("fa-check");
+    $(element + " span").addClass("fa-copy");
+  }, 4000);
 }

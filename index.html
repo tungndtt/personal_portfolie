@@ -99,6 +99,7 @@
 			}
 			.divider {
 				font-size: 20px;
+				font-weight: bold;
 				color: #d5cbcb;
 				display: flex;
 				align-items: center;
@@ -107,7 +108,7 @@
 
 			.divider::before, .divider::after {
 				flex: 1;
-				content: '';
+				content: "";
 				padding: 1px;
 				background-color: rgb(224, 224, 224);
 				margin: 8px;
@@ -229,7 +230,6 @@
 						<h2>Projects</h2>
 					</header>
 					<div class="list">
-						<div class="divider">Features</div>
 						<a class="list-item" href="https://github.com/tungndtt/livesen-map">
 							<div class="item-title">
 								Livensen Map
@@ -266,12 +266,8 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								<li>
-									Conducted sensitivity analysis within a process mining analysis pipeline to evaluate the impact of various factors on the results
-								</li>
-								<li>
-									Generated variant measurements using different strategies and metrics to provide a comprehensive understanding of the process
-								</li>
+								<li>Implemented an automatic tool for sensitivity analysis within process mining pipeline by conducting different variations on various factors of input data and then evaluating the impact of these factors on the results.</li>
+								<li>Proposed variant measurements using multiple strategies and metrics to provide a comprehensive understanding of the process.</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/social-network">
@@ -280,12 +276,8 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								<li>
-									Developed a social networking application for the Android-based system, combining features inspired by TikTok and Tinder
-								</li>
-								<li>
-									Implemented functionalities for uploading and interacting with the posts, as well as recommendations of people based on user activities
-								</li>
+								<li>Developed a social network application for the Android-based system, combining multiple features inspired by TikTok and Tinder such as posting, browsing, chatting, following and matching.</li>
+								<li>Implemented recommendation system based on user interactions on the posts.</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/evoila/devoilapers-backend">
@@ -294,27 +286,17 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								<li>
-									Deliver a web-based interface that allows non-technical users in Devoila to interact the Kubernetes environment
-								</li>
-								<li>
-									Automatically create and control operators without specialized, technical knowledge requirement
-								</li>
+								<li>Deliver a web-based platform supporting non-technical users in Devoila by abstracting away the complexity of Kubernetes and simplifing the interactions within Kubernetes environment.</li>
+								<li>Implemented the functionalities for automating the management operators without any specialized technical knowledge.</li>
 							</div>
 						</a>
-						<div class="divider">Others</div>
 						<a class="list-item" href="https://github.com/tungndtt/campus_manager">
 							<div class="item-title">
 								Campus Manager
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								<li>
-									Java application for efficient university campus management streamlines handling of campus-related data and enables seamless management of existing records
-								</li>
-								<li>
-									Covered basic CRUD operations (create, read, update, delete) and advanced features include data joining, loading, and importing
-								</li>
+								<li>Created a no-dependency program supporting the CRUD operations for university campus management.</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/beautiful_binary_tree_drawing">
@@ -323,12 +305,7 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								<li>
-									Java program for visualizing binary trees from different perspective views
-								</li>
-								<li>
-									Generates visual representations of binary trees for enhanced understanding
-								</li>
+								<li>Developed a visualization program which represents binary trees in different perspective views.</li>
 							</div>
 						</a>
 						<a class="list-item" href="https://github.com/tungndtt/Pokemon">
@@ -337,7 +314,7 @@
 								<span class="arrow icon solid fa-chevron-right"></span>
 							</div>
 							<div class="description">
-								Combined Mahjong gameplay with the beloved Pokemon assets
+								<li>Implemented a Mahjong game</li>
 							</div>
 						</a>
 					</div>
@@ -353,35 +330,29 @@
 							<span class="arrow icon solid fa-mail-bulk"></span>
 							Email
 						</button>
-						<div class="collapsed-content">
-							<p id="email">tungndtt224@gmail.com</p>
-							<span class="arrow icon solid fa-clipboard" onclick="copyToClipboard('#email')"></span>
+						<div class="collapsed-content" id="email">
+							<p>tungndtt224@gmail.com</p>
+							<span class="arrow icon solid fa-copy" onclick="copyToClipboard('#email')"></span>
 						</div>
 
 						<button type="button" class="collapsible">
 							<span class="arrow icon solid fa-phone"></span>
 							Telephone
 						</button>
-						<div class="collapsed-content">
-							<p id="telephone">(+49) 162 3068640</p>
-							<span class="arrow icon solid fa-clipboard" onclick="copyToClipboard('#telephone')"></span>
+						<div class="collapsed-content" id="telephone">
+							<p>(+49) 162 3068640</p>
+							<span class="arrow icon solid fa-copy" onclick="copyToClipboard('#telephone')"></span>
 						</div>
 
-						<button type="button" class="collapsible">
+						<button type="button" class="collapsible" onclick="location.href='https://github.com/tungndtt'">
 							<span class="brands icon fa-github"></span>
 							Github
 						</button>
-						<div class="collapsed-content">
-							<p>Check out my <a href="https://github.com/tungndtt">Github</a> account, where coding magic happens</p>
-						</div>
 
-						<button type="button" class="collapsible">
+						<button type="button" class="collapsible" onclick="location.href='https://www.linkedin.com/in/tung-nguyen-a54998207/'">
 							<span class="brands icon fa-linkedin"></span>
 							Linkedin
 						</button>
-						<div class="collapsed-content">
-							<p><a href="https://www.linkedin.com/in/tung-nguyen-a54998207/">Here</a> you can find my Linkedin profile :)</p>
-						</div>
 					</div>
 				</article>
 			</div>
